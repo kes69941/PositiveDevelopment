@@ -39,7 +39,7 @@ In addition, it would warrant an infrastructure pipeline and not just a applicat
 and C# tools (such as entity framework) are too abstract and asynchrously run to work well in a lambda. Also, the setup for this would easily take
 days. 
 
-* Building a simple WinForms app with a SQLite database to be deployed similarly as woudl be to an IOT edge device. Unfortunately, WinForms is 
+* Building a simple WinForms app with a SQLite database to be deployed as if for an IOT edge device. Unfortunately, WinForms is 
 still supported but on a deprecation path. It is no longer a template in the current Visual Studio setup and I didn't want to run into an issue
 with tool versioning or have to build the scaffolding from scratch. 
 

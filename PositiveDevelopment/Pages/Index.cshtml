@@ -1,0 +1,71 @@
+﻿@page
+@model IndexModel
+@{
+ViewBag.Title = "Search";
+}
+<table class="table">
+    <form>
+        <p>
+            Status: <input type="text" asp-for="SearchString" />
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
+    <tbody>
+        @foreach (var client in Model.Clients)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => client.Status.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => client.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => client.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => client.Contact.AddressOne)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => client.Contact.AddressTwo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => client.Contact.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => client.Contact.AState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => client.Contact.Zip)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+
+@{
+    var prevDisabled = !Model.Clients.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Clients.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+   asp-route-pageIndex="@(Model.Clients.PageIndex - 1)"
+   asp-route-currentFilter="@Model.SearchString"
+   class="btn btn-primary @prevDisabled">
+    Previous
+</a>
+<a asp-page="./Index"
+   asp-route-pageIndex="@(Model.Clients.PageIndex + 1)"
+   asp-route-currentFilter="@Model.SearchString"
+   class="btn btn-primary @nextDisabled">
+    Next
+</a>
+
+
+<form method="post">
+    <input class="btn btn-primary" type="submit" value="Seed Database (100 Records)" />
+</form>

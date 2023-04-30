@@ -1,0 +1,76 @@
+﻿@page
+@model CreateModel
+@{
+    ViewData["Title"] = "Create New Client";
+}
+<h1>@ViewData["Title"]</h1>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data" asp-controller="Create" asp-action="Create">
+        <table>
+            <tr>
+                <td>Status: </td>
+                <td>
+                    <select class="form-control"
+                            name="Status"
+                            id="status"
+                            asp-items="@Html.GetEnumSelectList<CreateModel.Status>()">
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>First Name: </td>
+                <td><input type="text" id="firstname" name="FirstName" /></td>
+            </tr>
+            <tr>
+                <td>Last Name: </td>
+                <td><input type="text" id="lastname" name="LastName" /></td>
+            </tr>
+            <tr>
+                <td>Email Address: </td>
+                <td><input type="email" id="email" name="Email" /></td>
+            </tr>
+            <tr>
+            <tr />
+            <tr>
+                <td>Address Line 1: </td>
+                <td><input type="text" id="addressone" name="AddressOne" /></td>
+            </tr>
+            <tr>
+                <td>Address Line 2: </td>
+                <td><input type="text" id="addresstwo" name="AddressTwo" /></td>
+            </tr>
+            <tr>
+                <td>City: </td>
+                <td><input type="text" id="city" name="City" /></td>
+            </tr>
+            <tr>
+                <td>State: </td>
+                <td><input type="text" id="state" name="State" /></td>
+            </tr>
+            <tr>
+                <td>Zip: </td>
+                <td><input type="text" id="zip" name="Zip" /></td>
+            </tr>
+            <tr>
+                <td>DOB: </td>
+                <td><input type="date" id="dob" name="DOB" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+        <hr />
+        @ViewBag.Name
+    </form>
+</body>
+</html>
+
+<p>Welcome to Positive Development! Let's get started!</p>
+

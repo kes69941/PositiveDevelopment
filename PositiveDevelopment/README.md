@@ -1,22 +1,24 @@
-﻿Welcome to the Positive Development Client Portal App! Where you can create clients and search for clients. 
+﻿# PositiveDevelopment
 
-How to Get Started
+Welcome to the Positive Development Client Portal App! Where you can create clients and search for clients. 
+
+## How to Get Started
 
 It is recommended to just pull down the project, open it in visual studio and run. Publishing across platforms requires thought and planning.
 
-About
+## About the Technologies
 
 This Application was written in C# with the .Net CORE framework using Razor pages. It includes a local sqlite database for peristent storage.
 The storage is code-first storage using Entity Framework and LINQ as the tool for querying entries. To create the DBContext and supporting classes,
 the databases were declared via SQL in SQL Managemennt Studio with a SQL Server backend. An Entity Framework command tool was then used
 for generating the boiler place code in C#. This saved a lot of typing. 
 
-Why C# and .NET Core? 
+## Why C# and .NET Core? 
 
 The template, scaffolding and documentation are thorough and C# IDE (Visual Studio) is easy to work with. Auto-completion, imports and setting
 up break points comes out-of-the box. I chose this for the speed and efficiency of my development as well as my familiarity with Entity Framework. 
 
-What would I change? 
+## What would I change? 
 
 0. I would have chosen a lighter framework such as RubyOnRails for faster development and publishing. 
 1. Layer inbetween dbcontext and controllers. 
@@ -31,7 +33,7 @@ If this was a WebAPI or needed to persist data to a remote server, then concerns
 and encryption in transit, security tokens, identity and access management, cross-site scripting attacks and much more would need to be considered. 
 In addition, it would warrant an infrastructure pipeline and not just a application pipeline. 
 
-What other technologies were considered? 
+## What other technologies were considered? 
 
 * C# Lambda vending an API through API Gateway with an AWS RDS backend. I chose not to do this because AWS Lambda only supportes .NET Core 3.5
 and C# tools (such as entity framework) are too abstract and asynchrously run to work well in a lambda. Also, the setup for this would easily take
@@ -48,7 +50,7 @@ This made me think twice about choosing it as the desired alloted time was no mo
 to be open to the wide world as Security Groups that are attached to a VPC / Subnets / Subnet Groups in the cloud do not accept IP traffic
 from most private computer IP addresses (ie, CIDR blocks that begin with 165). The networking alone would have taken me a while to figure out. 
 
-Lessons Learned
+## Lessons Learned
 
 My development environment was not set up. I did not have Visual Studio, SQL Management Studio or SQLite installed. Getting the right versions
 and choosing the framework I wanted to use ate up a lot of time. In retrospect, I would have been better off choosing something a bit more
